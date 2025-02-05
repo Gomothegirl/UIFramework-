@@ -7,7 +7,7 @@ import org.testng.annotations.DataProvider;
 @CucumberOptions(
         features = "src/test/resources/features",
         glue = {"stepDefinitions"},
-        tags = "@login", monochrome = true, dryRun = false,
+        tags = "@shopping_cart", monochrome = true, dryRun = false,
         plugin = {"pretty", "html:target/cucumber-reports.html", "json:target/cucumber-reports.json"}
 )
 public class TestRunner extends AbstractTestNGCucumberTests {

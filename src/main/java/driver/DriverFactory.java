@@ -1,6 +1,9 @@
 package driver;
 
 import io.github.bonigarcia.wdm.WebDriverManager;
+import org.apache.commons.io.FileUtils;
+import org.openqa.selenium.OutputType;
+import org.openqa.selenium.TakesScreenshot;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
@@ -8,8 +11,11 @@ import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.firefox.FirefoxOptions;
 import org.openqa.selenium.PageLoadStrategy;
 
+import java.io.File;
 import java.io.FileInputStream;
 import java.io.IOException;
+import java.text.SimpleDateFormat;
+import java.util.Date;
 import java.util.Properties;
 
 public class DriverFactory {
@@ -63,9 +69,22 @@ public class DriverFactory {
         }
         return browserType;
     }
-
+    public static void takeScreenshot() {
+        try {
+            WebDriver webdriver = getDriver();
+            String timestamp = new SimpleDateFormat("yyyyMMdd_HHmmss").format(new Date());
+            File srcFile = ((TakesScreenshot) webdriver).getScreenshotAs(OutputType.FILE);
+            String filePath = "src/main/resources/screenshots/screenshot" +  "_" + timestamp + ".png";
+            FileUtils.copyFile(srcFile, new File(filePath));
+            System.out.println("Screenshot saved: " + filePath);
+        } catch (IOException e) {
+            System.out.println("Failed to take screenshot: " + e.getMessage());
+        }
+    }
     public static void cleanupDriver() {
+
         if (webDriver.get() != null) {
+            takeScreenshot();
             webDriver.get().quit();
             webDriver.remove();
         }
