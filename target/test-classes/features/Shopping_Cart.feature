@@ -1,4 +1,5 @@
 @shopping_cart
+  @regression
 Feature: Shopping Cart Automation
 
   Scenario: Purchase "Build your own cheap computer"

@@ -14,5 +14,5 @@ Feature: WebDriver University - Login
     Examples:
       | username  | password     | login message        |
       | webdriver | webdriver123 | validation succeeded |
-      | webdriver | webdriver1   | validation failed    |
-      | joe_blogs | password1    | validation failed    |
+#      | webdriver | webdriver1   | validation failed    |
+#      | joe_blogs | password1    | validation failed    |

@@ -17,7 +17,6 @@ public class Login_PO extends Base_PO {
         super();
     }
 
-
     public void navigateTo_WebdriverUniversity_LoginPage() {
         navigateTo_Url(Global_Vars.WEBDRIVER_UNIVERSITY_URL + "/Login-Portal/index.html?");
     }

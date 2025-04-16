@@ -1,5 +1,0 @@
-runners\TestRunner.class
-stepDefinitions\Shopping_Cart.class
-stepDefinitions\Login.class
-stepDefinitions\base\Hooks.class
-stepDefinitions\Contact_Us.class

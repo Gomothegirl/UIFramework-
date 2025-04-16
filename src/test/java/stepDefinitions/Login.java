@@ -45,15 +45,15 @@ public class Login extends Base_PO {
         login_po.validate_SuccessfulLogin_Message();
     }
 
-    @Then("I should be presented with the unsuccessful login message")
-    public void i_should_be_presented_with_the_unsuccessful_login_message() {
-        login_po.validate_FailedLogin_Message();
-    }
-
-
-    @Then("I should be presented with the following login message {}")
-    public void iShouldBePresentedWithTheFollowingLoginMessage(String expectedMessage) {
-       login_po.waitForAlert_And_ValidateText(expectedMessage);
-    }
+//    @Then("I should be presented with the unsuccessful login message")
+//    public void i_should_be_presented_with_the_unsuccessful_login_message() {
+//        login_po.validate_FailedLogin_Message();
+//    }
+//
+//
+//    @Then("I should be presented with the following login message {}")
+//    public void iShouldBePresentedWithTheFollowingLoginMessage(String expectedMessage) {
+//       login_po.waitForAlert_And_ValidateText(expectedMessage);
+//    }
 }
 

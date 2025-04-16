@@ -69,22 +69,22 @@ public class DriverFactory {
         }
         return browserType;
     }
-    public static void takeScreenshot() {
-        try {
-            WebDriver webdriver = getDriver();
-            String timestamp = new SimpleDateFormat("yyyyMMdd_HHmmss").format(new Date());
-            File srcFile = ((TakesScreenshot) webdriver).getScreenshotAs(OutputType.FILE);
-            String filePath = "src/main/resources/screenshots/screenshot" +  "_" + timestamp + ".png";
-            FileUtils.copyFile(srcFile, new File(filePath));
-            System.out.println("Screenshot saved: " + filePath);
-        } catch (IOException e) {
-            System.out.println("Failed to take screenshot: " + e.getMessage());
-        }
-    }
+//    public static void takeScreenshot() {
+//        try {
+//            WebDriver webdriver = getDriver();
+//            String timestamp = new SimpleDateFormat("yyyyMMdd_HHmmss").format(new Date());
+//            File srcFile = ((TakesScreenshot) webdriver).getScreenshotAs(OutputType.FILE);
+//            String filePath = "src/main/resources/screenshots/screenshot" +  "_" + timestamp + ".png";
+//            FileUtils.copyFile(srcFile, new File(filePath));
+//            System.out.println("Screenshot saved: " + filePath);
+//        } catch (IOException e) {
+//            System.out.println("Failed to take screenshot: " + e.getMessage());
+//        }
+//    }
     public static void cleanupDriver() {
 
         if (webDriver.get() != null) {
-            takeScreenshot();
+//            takeScreenshot();
             webDriver.get().quit();
             webDriver.remove();
         }
